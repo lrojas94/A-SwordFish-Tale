@@ -12,6 +12,8 @@ public class Fish : ScriptableObject
     public float magicalDefense;
     public float evasion;
     public Element element = Element.None;
+    [SerializeField]
+    public List<Attack> attacks;
 
     public int CalculateDamage(Fish target, Attack attack)
     {
