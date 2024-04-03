@@ -52,18 +52,16 @@ public class TurnBattleManager : MonoBehaviour
         playerObjects = new List<GameObject> {  player.gameObject };
         enemyObjects = new List<GameObject> { enemy.gameObject };
 
-        Debug.Log($"{enemyPositionSlots.Count}, {enemyPositionSlots[0].position}");
-
         // Instantiate enemy party:
         enemy.battleUnit.Setup(enemyPositionSlots[0].position);
 
         int slot = 1;
         enemy.party.ForEach(f =>
         {
-            GameObject enemyObject = GameObject.Instantiate(mainPrefab);
-            enemyObject.transform.position = enemyStartPosition;
-            BattleUnit unit = enemy.GetComponent<BattleUnit>();
-            Debug.Log(f.name);
+            GameObject partyMember = GameObject.Instantiate(mainPrefab);
+            partyMember.transform.position = enemyStartPosition;
+            BattleUnit unit = partyMember.GetComponent<BattleUnit>();
+            Debug.Log(enemyPositionSlots[slot].position);
             unit.Setup(f, enemyPositionSlots[slot].position);
             slot++;
         });

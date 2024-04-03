@@ -35,8 +35,8 @@ public class BattleUnit : MonoBehaviour
         currentHealth = fish.health;
         
         // TODO: Update sprites here.
-        state = BattleUnitState.SETUP;
         this.targetPosition = targetPosition;
+        state = BattleUnitState.SETUP;
     }
 
     public void Setup(Vector3 targetPosition)
@@ -52,6 +52,7 @@ public class BattleUnit : MonoBehaviour
 
             if (Vector3.Distance(targetPosition, transform.position) > minDistance)
             {
+                Debug.Log(targetPosition);
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             } else
             {

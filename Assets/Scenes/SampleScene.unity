@@ -1022,7 +1022,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf488801b3e6b3e4180abb6e67af8f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  party: []
+  party:
+  - {fileID: 11400000, guid: b0cfe404b59be404fbbb9a10ea63afe7, type: 2}
+  - {fileID: 11400000, guid: b0cfe404b59be404fbbb9a10ea63afe7, type: 2}
   battleUnit: {fileID: 0}
 --- !u!114 &1653511245
 MonoBehaviour:
